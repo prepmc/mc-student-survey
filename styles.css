@@ -544,6 +544,14 @@ button {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+
+    .rating-header {
+        display: none;
+    }
+
+}
+
 .rating-row {
 
     display: grid;
@@ -563,6 +571,39 @@ button {
         #EFEFEF;
 }
 
+@media (max-width: 768px) {
+
+    .rating-row {
+
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .rating-header + .rating-row {
+
+        border-top:none;
+    }
+
+    .rating-question {
+
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 12px;
+    }
+
+    .rating-cell {
+
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+}
+
 .rating-question {
 
     padding-right:
@@ -575,6 +616,28 @@ button {
         center;
 }
 
+.rating-number {
+
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .rating-number {
+
+        display: block;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        color: #666;
+
+        line-height: 1;
+    }
+
+}
+
 .rating-cell input {
 
     width:
@@ -585,6 +648,23 @@ button {
 
     accent-color:
         var(--mc-purple);
+}
+
+@media (max-width: 768px) {
+
+    .rating-cell input {
+
+        width: 22px;
+
+        height: 22px;
+
+        accent-color: var(--mc-purple);
+
+        cursor: pointer;
+
+        margin-bottom: 20px;
+    }
+
 }
 
 
@@ -824,6 +904,47 @@ textarea:focus {
     color:#666;
     font-size:.9rem;
 }
+
+.nps-label-mobile-top,
+.nps-label-mobile-bottom {
+
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .nps-labels {
+
+        display: none;
+    }
+
+    .nps-label-mobile-top,
+    .nps-label-mobile-bottom {
+
+        display: block;
+
+        text-align: center;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        color: #666;
+    }
+
+    .nps-label-mobile-top {
+
+        margin-bottom: 12px;
+    }
+
+    .nps-label-mobile-bottom {
+
+        margin-top: 12px;
+    }
+
+}
+
+
 
 /* =========================================================
    TOAST

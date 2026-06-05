@@ -21,37 +21,37 @@ const CONFIG = {
     {
       id: "gmat",
       name: "GMAT",
-      category: "Cursos de preparación"
+      category: "Cursos de preparación para exámenes estandarizados"
     },
 
     {
       id: "gre",
       name: "GRE",
-      category: "Cursos de preparación"
+      category: "Cursos de preparación para exámenes estandarizados"
     },
 
     {
       id: "sat",
       name: "SAT",
-      category: "Cursos de preparación"
+      category: "Cursos de preparación para exámenes estandarizados"
     },
 
     {
       id: "toefl",
       name: "TOEFL",
-      category: "Cursos de preparación"
+      category: "Cursos de preparación para exámenes estandarizados"
     },
 
     {
       id: "ielts",
       name: "IELTS",
-      category: "Cursos de preparación"
+      category: "Cursos de preparación para exámenes estandarizados"
     },
 
     {
       id: "academic_english_exams",
       name: "Academic English for Exams",
-      category: "Cursos de preparación"
+      category: "Cursos de nivelación"
     }
 
   ],
@@ -100,7 +100,7 @@ const CONFIG = {
     {
       id: "karen_weberhofer",
       name: "Karen W.",
-      topic: "math"
+      topic: "verbal"
     }    
 
   ],
@@ -123,7 +123,7 @@ const CONFIG = {
     },
 
     {
-      key: "usefulness",
+      key: "connectivity",
       label: "La calidad de su conexión a  internet es buena y estable"
     },
 
@@ -143,12 +143,17 @@ const CONFIG = {
 
     {
       key: "administration",
-      label: "La atención administrativa fue satisfactoria durante las clases"
+      label: "Antes o durante las clases, el personal administrativo fue amable y atento a cualquier necesidad o duda"
+    },
+
+    {
+      key: "speed",
+      label: "El personal administrativo respondió a tus consultas oportunamente"
     },
 
     {
       key: "communication",
-      label: "Las comunicación del personal administrativo fue clara y oportuna"
+      label: "El personal administrativo fue claro en explicar el servicio contratado"
     }
 
   ],

@@ -689,7 +689,7 @@ function toggleTeacher(
 
             expertise: null,
 
-            usefulness: null,
+            connectivity: null,
 
             recommendation: null
 
@@ -880,7 +880,7 @@ function renderTeacherEvaluationScreen(
     getApp().innerHTML =
         createScreenLayout(
             teacher.name,
-            "Evalúa tu experiencia con este profesor.",
+            "Evalúa tu experiencia con este profesor, donde 1 es la puntuación más baja y 5 la más alta.",
             html
         );
 
@@ -913,11 +913,7 @@ function buildRatingCells(
                 <input
                     type="radio"
 
-                    name="
-                    ${teacherId}
-                    -
-                    ${questionKey}
-                    "
+                    name="${teacherId}-${questionKey}"
 
                     value="${score}"
 
@@ -935,6 +931,10 @@ function buildRatingCells(
                         )
                     "
                 >
+
+                <span class="rating-number">
+                    ${score}
+                </span>
 
             </div>
 
@@ -1054,8 +1054,8 @@ function renderInstitutionScreen() {
 
     getApp().innerHTML =
         createScreenLayout(
-            "Experiencia institucional",
-            "Evalúa los aspectos generales de Master's College.",
+            "Área administrativa",
+            "Evalúa al área administrativa de Master's College, donde 1 es la puntuación más baja y 5 la más alta.",
             html
         );
 
@@ -1086,12 +1086,7 @@ function buildInstitutionCells(
 
                 <input
                     type="radio"
-
-                    name="
-                    institution-
-                    ${questionKey}
-                    "
-
+                    name="institution-${questionKey}"
                     value="${score}"
 
                     ${
@@ -1107,6 +1102,10 @@ function buildInstitutionCells(
                         )
                     "
                 >
+
+                <span class="rating-number">
+                    ${score}
+                </span>
 
             </div>
 
@@ -1181,14 +1180,18 @@ function renderNPSScreen() {
 
             <div class="nps-labels">
 
-                <span>
+                <span class="nps-label-left">
                     Nada probable
                 </span>
 
-                <span>
+                <span class="nps-label-right">
                     Extremadamente probable
                 </span>
 
+            </div>
+
+            <div class="nps-label-mobile-top">
+                Nada probable
             </div>
 
             <div class="nps-grid">
@@ -1229,6 +1232,11 @@ function renderNPSScreen() {
 
     html += `
             </div>
+
+            <div class="nps-label-mobile-bottom">
+                Extremadamente probable
+            </div>
+
         </div>
     `;
 
@@ -1289,7 +1297,7 @@ function renderCommentsScreen() {
         <textarea
             id="commentsField"
 
-            placeholder="Comparte cualquier comentario, sugerencia o recomendación.
+            placeholder="Escribe tus comentarios aquí..."
             "
         >${state.comments}</textarea>
 
@@ -1298,7 +1306,7 @@ function renderCommentsScreen() {
     getApp().innerHTML =
         createScreenLayout(
             "Comentarios finales",
-            "Este campo es opcional.",
+            "Comparte cualquier comentario, sugerencia o recomendación (opcional).",
             html
         );
 
@@ -1377,7 +1385,12 @@ function buildPayload() {
     const payload = {
 
         Timestamp:
-            new Date().toISOString(),
+            new Date().toLocaleString(
+                "sv-SE",
+                {
+                    timeZone: "America/Lima"
+                }
+            ),
 
         Course:
             state.course,
@@ -1390,6 +1403,9 @@ function buildPayload() {
 
         Institution_Administration:
             state.institution.administration,
+
+        Institution_Speed:
+            state.institution.speed,
 
         Institution_Communication:
             state.institution.communication,
@@ -1445,8 +1461,8 @@ function buildPayload() {
         ] = teacher?.expertise || "";
 
         payload[
-            `Teacher_${i}_Usefulness`
-        ] = teacher?.usefulness || "";
+            `Teacher_${i}_Connectivity`
+        ] = teacher?.connectivity || "";
 
         payload[
             `Teacher_${i}_Recommendation`
