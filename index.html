@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Encuesta anónima para estudiantes | Master's College
+    </title>
+
+    <meta
+        name="description"
+        content="Encuesta de satisfacción de estudiantes de Master's College">
+
+    <meta
+        name="theme-color"
+        content="#550F78">
+
+    <!-- FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- APP -->
+
+    <main id="app">
+
+        <!-- HERO / LOADING -->
+
+        <section
+            id="loading-screen"
+            class="screen active">
+
+            <div class="hero">
+
+                <img
+                    src="logo.png"
+                    alt="Master's College"
+                    class="logo">
+
+                <h1>
+                    Encuesta anónima para estudiantes
+                </h1>
+
+                <p>
+                    En la siguiente encuesta, da tu opinión sobre la enseñanza
+                    y servicio recibido por los profesores y el staff administrativo
+                    en Master's College. Lee las preguntas y alternativas con cuidado,
+                    debido a que sólo puedes marcar una opción para cada profesor.
+                </p>
+
+                <p>
+                    Tu opinión nos ayuda a mejorar continuamente
+                    la experiencia académica de nuestros estudiantes.
+                </p>
+
+                <p>
+                    ¡Gracias!
+                </p>
+
+                <button
+                    id="startBtn"
+                    class="btn-primary">
+
+                    Comenzar
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- TOASTS -->
+
+    <div id="toast-container"></div>
+
+    <!-- MODALS -->
+
+    <div id="modal-root"></div>
+
+    <!-- CONFIG -->
+
+    <script src="config.js"></script>
+
+    <!-- SURVEY ENGINE -->
+
+    <script src="survey.js"></script>
+
+</body>
+
+</html>
