@@ -101,7 +101,12 @@ const CONFIG = {
       id: "karen_weberhofer",
       name: "Karen W.",
       topic: "verbal"
-    }    
+    },
+    {
+      id: "david_rivera",
+      name: "David R.",
+      topic: "math"
+    }      
 
   ],
 
