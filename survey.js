@@ -1382,6 +1382,12 @@ function renderSuccessScreen() {
 
 function buildPayload() {
 
+    const selectedCourse =
+
+        CONFIG.courses.find(
+            course => course.id === state.course
+        );
+
     const payload = {
 
         Timestamp:
@@ -1393,7 +1399,9 @@ function buildPayload() {
             ),
 
         Course:
-            state.course,
+            selectedCourse
+                ? selectedCourse.name
+                : state.course,
 
         ClassType:
             state.classType,
